@@ -8,4 +8,9 @@ class PhotosController < ApplicationController
     @photo = Photo.find(@id)
   end
 
+  def new_form
+    @photo = Photo.new_photo_form
+
+  end
+
 end
