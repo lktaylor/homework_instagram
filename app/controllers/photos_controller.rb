@@ -28,7 +28,7 @@ class PhotosController < ApplicationController
   end
 
   def update_row
-      old_record = Photo.find(params[:id]
+      old_record = Photo.find(params[:id])
       old_record.caption = (params[:the_caption])
       old_record.source = (params[:the_source])
       old_record.save
