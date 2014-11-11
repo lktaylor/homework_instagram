@@ -9,24 +9,29 @@ class PhotosController < ApplicationController
   end
 
   def new_form
-    @photo = Photo.new_photo_form
+  end
+
+  def create_row
+      new_record = Photo.new
+      new_record.caption = (params[:the_caption])
+      new_record.source = (params[:the_source])
+      new_record.save
   end
 
   def destroy
-    photo = Photo.find{:id}
-    photo.destroy
+    i = Photo.find(params[:id])
+    i.destroy
   end
 
   def edit_form
-      @photo = Photo.find_by({:id => params[:id]})
-      @photo.caption
-      @picture = @photo.source
+      @photo = Photo.find(params[:id])
   end
 
   def update_row
-      photo = Photo.find{:id}
-      photo.caption = "the_caption"
-      photo.save
+      old_record = Photo.find(params[:id]
+      old_record.caption = (params[:the_caption])
+      old_record.source = (params[:the_source])
+      old_record.save
   end
 
 end
