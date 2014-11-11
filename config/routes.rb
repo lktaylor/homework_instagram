@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+
   get("/", { :controller => "photos", :action => "index" })
 
   # Routes to READ photos
@@ -7,5 +8,14 @@ Rails.application.routes.draw do
 
   # Route for users to CREATE content
   get("/new_photo_form", { :controller => "photos", :action => "new_form" })
+
+  # Route to destroy an existing photo
+  get("/delete_photo/:id", { :controller => "photos", :action => "destroy" })
+
+  # Route to EDIT form
+  get("/edit_photo_form/:id", { :controller => "photos", :action => "edit_form" })
+  get("update_photo/:id", { :controller => "photos", :action => "update_row" })
+
+  get("/photobucket", { :controller => "photos", :action => "view_photobucket" })
 
 end
